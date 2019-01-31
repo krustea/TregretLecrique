@@ -14,9 +14,6 @@ class Led:
     def off(self, numero_broche):
         return GPIO.output(numero_broche, GPIO.LOW)
 
-led1= Led('14', 'rouge')
-led2= Led('15', "bleu")
-
 from flask import render_template
 @app.route('/on/')
 def hello():
