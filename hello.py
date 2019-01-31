@@ -28,7 +28,7 @@ def on(nbr):
         GPIO.output(14, GPIO.HIGH)
     elif nbr == '2':
         GPIO.output(15, GPIO.HIGH)
-    return 'led on'
+    return render_template('on.html', nbr=nbr)
 
 @app.route('/off/')
 @app.route('/off/<nbr>')
@@ -37,4 +37,4 @@ def off(nbr):
         GPIO.output(14, GPIO.LOW)
     elif nbr == '2':
         GPIO.output(15, GPIO.LOW)
-    return 'led off'
+    return render_template('on.html', nbr=nbr)
