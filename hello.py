@@ -2,11 +2,9 @@ from flask import Flask
 app = Flask(__name__)
 
 from flask import render_template
-
-@app.route('/hello/')
-@app.route('/hello/<name>')
-def hello(name=None):
-    return render_template('hello.html', name=name)
+@app.route('/on/')
+def hello(nbr=Nbr):
+    return render_template('on.html', nbr=nbr)
 
 import RPi.GPIO as GPIO
 import time
