@@ -3,17 +3,6 @@ from ledobject import Led
 from flask import Flask
 app = Flask(__name__)
 
-class Led:
-    def __init__(self, numero_broche, couleur):
-        self.numero_broche = numero_broche
-        self.couleur = couleur
-
-    def on(self, numero_broche):
-        return GPIO.output(numero_broche, GPIO.HIGH)
-
-    def off(self, numero_broche):
-        return GPIO.output(numero_broche, GPIO.LOW)
-
 from flask import render_template
 @app.route('/on/')
 def hello():
