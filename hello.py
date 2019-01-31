@@ -22,4 +22,11 @@ GPIO.setup(14, GPIO.OUT)
 @app.route('/on/')
 def on():
     GPIO.output(14, GPIO.HIGH)
+    GPIO.output(15, GPIO.HIGH)
     return 'led on'
+
+@app.route('/off/')
+def off():
+    GPIO.output(14, GPIO.LOW)
+    GPIO.output(15, GPIO.LOW)
+    return 'led off'
