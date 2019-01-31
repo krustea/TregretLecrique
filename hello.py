@@ -3,7 +3,7 @@ app = Flask(__name__)
 
 from flask import render_template
 @app.route('/on/')
-def hello(nbr=Nbr):
+def hello(nbr=nbr):
     return render_template('on.html', nbr=nbr)
 
 import RPi.GPIO as GPIO
