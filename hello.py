@@ -18,15 +18,23 @@ GPIO.setwarnings(False)
 #initialisation de la broche en mode "sortie"
 #⚠️ Le nombre passé en paramètre correspond au numéro de GPIO et non au numéro de la broche.
 GPIO.setup(14, GPIO.OUT)
+GPIO.setup(15, GPIO.OUT)
+
 
 @app.route('/on/')
-def on():
-    GPIO.output(14, GPIO.HIGH)
-    GPIO.output(15, GPIO.HIGH)
+@app.route('/on/<nbr>')
+def on(nbr):
+    if nbr == '1':
+        GPIO.output(14, GPIO.HIGH)
+    elif nbr == '2':
+        GPIO.output(15, GPIO.HIGH)
     return 'led on'
 
 @app.route('/off/')
-def off():
-    GPIO.output(14, GPIO.LOW)
-    GPIO.output(15, GPIO.LOW)
+@app.route('/off/<nbr>')
+def off(nbr):
+    if nbr == '1':
+        GPIO.output(14, GPIO.LOW)
+    elif nbr == '2':
+        GPIO.output(15, GPIO.LOW)
     return 'led off'
