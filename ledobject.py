@@ -12,5 +12,5 @@ class Led:
     def off(self, numero_broche):
         return GPIO.output(numero_broche, GPIO.LOW)
 
-led1= Led(14)
-led2= Led(15)
+led1= Led('14')
+led2= Led('15')
