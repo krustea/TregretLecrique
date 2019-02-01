@@ -13,6 +13,7 @@ class Led2:
         elif(Celsius >= 15 and Celsius <= 30):
             GPIO.output(18, GPIO.LOW)
             GPIO.output(24, GPIO.LOW)
+            GPIO.output(22, GPIO.LOW)
         elif (Celsius > 30):
             GPIO.output(24, GPIO.HIGH)
             GPIO.output(22, GPIO.HIGH)
