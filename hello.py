@@ -1,4 +1,4 @@
-from ledobject import Led
+from led import Led
 from temperature import TemperatureSensor
 
 from flask import Flask
