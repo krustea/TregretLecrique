@@ -8,20 +8,12 @@ from flask import render_template
 def hello():
     return render_template('on.html')
 
-@app.route('/on/')
-@app.route('/on/<nbr>')
-def on(nbr):
-    if nbr == '1':
-        led1.on(14)
-    elif nbr == '2':
-        led2.on(15)
-    return render_template('on.html', nbr=nbr)
+@app.route('/led/<on_off>')
+def led(on_off):
+    if on_off == 'on' or on_off == 'off':
+        led1.status = on_off
+        led1.led_status()
+    elif on_off == 'blink':
+        led1.blink()
+    return render_template('bouton.html')
 
-@app.route('/off/')
-@app.route('/off/<nbr>')
-def off(nbr):
-    if nbr == '1':
-        led1.off(14)
-    elif nbr == '2':
-        led2.off(15)
-    return render_template('on.html', nbr=nbr)
