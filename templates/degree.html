@@ -9,8 +9,16 @@
     <title>Affichage des degrées</title>
 </head>
 <body>
-
-<p> {{ Celsius }} </p>
+{{ Celsius }}
+    {%if Celsius <= 15%}
+                       <p>Il fait froid</p>
+    {%elif Celsius > 15 and Celsius < 30 %}
+                        <p>Il fait doux</p>
+    {%elif Celsius >= 30 %}
+                        <p>Il fait chaud</p>
+    {% endif %}                    
+    
+  
 
 
 
