@@ -26,6 +26,6 @@ def led(on_off):
 @app.route('/temp/<Celsius>')
 def tempC(Celsius):
     Celsius = degcel.degreeCelsius()
-    led2 = led2.led2_Celsius()
+    led2.led2_Celsius()
     return render_template('degree.html', Celsius = Celsius)
 
