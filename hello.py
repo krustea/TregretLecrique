@@ -21,8 +21,8 @@ def led(on_off):
         led1.blink()
     return render_template('on.html')
 
-@app.route('/temp/<Celcius>')
-def tempC(Celcius):
-    Celcius = degcel.degreeCelcius()
-    return render_template('degree.html', Celcius = Celcius)
+@app.route('/temp/<Celsius>')
+def tempC(Celsius):
+    Celsius = degcel.degreeCelsius()
+    return render_template('degree.html', Celsius = Celsius)
 
