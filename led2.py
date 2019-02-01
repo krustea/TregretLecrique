@@ -1,7 +1,6 @@
 import RPi.GPIO as GPIO
 class Led2:
-    def __init__(self, Celsius):
-        self.Celsius = Celsius
+    def __init__(self):
         GPIO.setmode(GPIO.BCM)
         GPIO.setwarnings(False)
         GPIO.setup(18, GPIO.OUT)
