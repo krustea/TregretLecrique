@@ -5,6 +5,9 @@ from flask import Flask
 app = Flask(__name__)
 
 from flask import render_template
+degcel= TemperatureSensor()
+
+
 @app.route('/on/')
 def hello():
     return render_template('on.html')
@@ -19,13 +22,8 @@ def led(on_off):
     return render_template('on.html')
 
 @app.route('/temp/')
-Celcius = TemperatureSensor.degreeCelsius()
-def tempC():
-    if  Celsius < 15 :
-        print('Il fait froid')
-    elif Celsius => 15 and Celsius < 30 :
-        print('Ca peut aller')
-    elif Celsius >= 30:
-        print('Il fait chaud')
-    return render_template('degree.html')
+
+def tempC(Celcius):
+    Celcius = degcel.degreeCelsius()
+    return render_template('degree.html', Celcius = Celcius)
 
