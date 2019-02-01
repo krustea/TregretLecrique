@@ -5,6 +5,7 @@ class Led2:
         GPIO.setwarnings(False)
         GPIO.setup(18, GPIO.OUT)
         GPIO.setup(24, GPIO.OUT)
+        GPIO.setup(22, GPIO.OUT)
         
     def led2_Celsius(self, Celsius):
         if (Celsius < 15):
